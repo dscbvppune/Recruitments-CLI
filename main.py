@@ -128,7 +128,7 @@ print("\n\nYour skills are => ")
 for i, skill in enumerate(skills):
 	print(i + 1, "=>", skill)
 
-time.sleep(3)
+sleep(3)
 
 selectedDomains = ", ".join(domainChoiceAnswers["domains"])
 skillsEntered = ", ".join(skills)

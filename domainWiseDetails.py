@@ -6,7 +6,7 @@ def technicalDomainDetails(f):
 	print("Peeps interested in building => Web apps, Mobile apps, ML, Cloud, Ethical Hacking, AR / VR, Miscellaneous")
 	details = """The technical team consists of people who like to work in the domain of Web Development, Mobile App Development, Machine Learning and Google Cloud. We welcome students who are keen on learning new things. Even if you haven’t started your tech journey yet, we would insist that you join us as a technical team member. We would provide adequate resources to get you started on your journey."""
 	print("\n\n")
-	print(details
+	print(details)
 
 def designingDomainDetails(f):
 	print(f.renderText("DSC BVP Pune"))
@@ -16,7 +16,7 @@ def designingDomainDetails(f):
 	print("Peeps who are => Designers, UI / UX designers, Video Editors")
 	details = """The designing team consists of people who like to work in the domain of graphic designing, UI/UX, Video editing and 3D modelling and rendering. We aren't only looking for professionals, if you are interested in designing but haven't started yet, whether you are just a beginner, or a professional with excellent skills, this is your place to learn, practice and grow."""
 	print("\n\n")
-	print(details
+	print(details)
 
 def managementDomainDetails(f):
 	print(f.renderText("DSC BVP Pune"))
