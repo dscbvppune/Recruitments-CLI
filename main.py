@@ -1,3 +1,4 @@
+import requests
 import re
 from os import system, name
 from pyfiglet import Figlet
@@ -46,10 +47,15 @@ clear()
 f = Figlet()
 print(f.renderText('DSC BVP Pune'))
 print("\n\n\n")
-print(f.renderText("Recruitments"))
+print(f.renderText("Instructions"))
 
+print("All fields are mandatory.")
 print("Make sure you have an active internet connection")
-sleep(2)
+print("Press the up, down, left, right arrow keys to navigate up or down when multiple options are present. Press enter to continue.")
+print("Press the up, down, left, right arrow keys to navigate up or down when multiple radio box options are present. Press space to select and enter to submit.")
+print("While entering your skills, make sure to follow the format specified.")
+
+input("\n\n\n\nPress enter to continue ")
 
 clear()
 print(f.renderText('DSC BVP Pune'))
@@ -86,7 +92,7 @@ print(f.renderText("Teams"))
 
 domainRelatedQuestions = [
 	inquirer.Checkbox('domains',
-		message="Select the domains you would like to be a part of",
+		message="Select the domains you would like to be a part of (Press space to select, enter to submit)",
 		choices=['Technical Team', 'Designing Team', 'Content Team', 'Management and Publicity Team'],
 	),
 ]
@@ -121,3 +127,43 @@ for i, domain in enumerate(domainChoiceAnswers["domains"]):
 print("\n\nYour skills are => ")
 for i, skill in enumerate(skills):
 	print(i + 1, "=>", skill)
+
+time.sleep(3)
+
+selectedDomains = ", ".join(domainChoiceAnswers["domains"])
+skillsEntered = ", ".join(skills)
+
+finalData = {
+	"name": personalAnswers["name"],
+	"email": personalAnswers["email"],
+	"mobileNumber": personalAnswers["phone"],
+	"year": personalAnswers["year"],
+	"branch": personalAnswers["stream"],
+	"domain": selectedDomains,
+	"skills": skillsEntered
+}
+
+
+# DO NOT MODIFY
+
+print("Submitting data")
+
+postApiEndPoint = "https://01ff411d6dbe9fe7f110f796d8e116f9.m.pipedream.net"
+clear()
+try:
+	r = requests.post(postApiEndPoint, data=finalData)
+except Exception as e:
+	clear()
+	print(f.renderText('DSC BVP Pune'))
+	print("\n\n\n")
+	print(f.renderText("Uh oh"))
+	print("\n\n")
+	print("We faced an error while submitting your application. Please share this screenshot with the team at dscbvppune@gmail.com.")
+else:
+	clear()
+	print(f.renderText('DSC BVP Pune'))
+	print("\n\n\n")
+	print(f.renderText("Success"))
+	print("\n\n")
+	print("We have received your application. We would contact you with further steps. Please be on the lookout for our email. :)")
+
