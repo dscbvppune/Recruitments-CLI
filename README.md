@@ -2,7 +2,7 @@
 
 Hey there 👋
 
-We're glad to see you here. Follow these instructions to setup the Recruitments CLI tool. Please feel free to reach out to us at (dscbvppune@gmail.com)[dscbvppune@gmail.com] if you face any issues while setting it up.
+We're glad to see you here. Follow these instructions to setup the Recruitments CLI tool. Please feel free to reach out to us at [dscbvppune@gmail.com](dscbvppune@gmail.com) if you face any issues while setting it up.
 
 ## Getting started
 To get started, you would need:
